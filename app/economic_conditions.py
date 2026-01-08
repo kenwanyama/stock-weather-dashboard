@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import datetime as dt
-from dotenv import load_dotenv
 import streamlit as st
 
 # Indicators mapping----------------------------------------------------------------
@@ -22,8 +21,7 @@ indicators = {
 # Fetch economic snapshot from FRED, restricted to 2025, cached--------------------------------
 @st.cache_data(show_spinner=False)
 def get_economic_snapshot():
-    load_dotenv()
-    fred = Fred(api_key=os.st.secrets('FRED_API_KEY'))
+    fred = Fred(api_key=st.secrets['FRED_API_KEY'])
     data = pd.DataFrame()
 
     start = dt.date(2025, 1, 1)
