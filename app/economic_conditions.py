@@ -23,7 +23,7 @@ indicators = {
 @st.cache_data(show_spinner=False)
 def get_economic_snapshot():
     load_dotenv()
-    fred = Fred(api_key=os.getenv('FRED_API_KEY'))
+    fred = Fred(api_key=os.st.secrets('FRED_API_KEY'))
     data = pd.DataFrame()
 
     start = dt.date(2025, 1, 1)
