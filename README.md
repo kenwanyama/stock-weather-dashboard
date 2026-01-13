@@ -105,7 +105,7 @@ streamlit run 1_Home.py
 The application will open in your default browser at `http://localhost:8501`
 
 
-## 📊 Data Sources
+## Data Sources
 
 - **Market Data**: Yahoo Finance via `yfinance`
 - **Economic Indicators**: Federal Reserve Economic Data (FRED)
@@ -152,7 +152,7 @@ sudo chown -R $USER:$USER venv/
 
 ## Contributing
 
-This is an educational project. Contributions, suggestions, and feedback are welcome:
+This is an educational project. Contributions, suggestions, and feedback are welcome
 
 ## Disclaimer
 
