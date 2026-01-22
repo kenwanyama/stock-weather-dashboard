@@ -17,15 +17,14 @@ from sector_data import (
     trend_analysis
 )
 
-# -----------------------------
-# Page Configuration
-# -----------------------------
+# Page Config
 st.set_page_config(
     page_title="Sector Performance Dashboard",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="expanded"
 )
 
-# ---- HEADER ----
+# Header
 st.markdown(
     """
     <div style="text-align:center; padding:1rem 0;">
@@ -40,11 +39,11 @@ st.markdown(
 
 st.divider()
 
-# ---- LOAD DATA ----
+# Load data
 raw_data = get_sector_performance()
 data = prepare_data(raw_data)
 
-# ---- INTRODUCTION ----
+# Introduction
 st.markdown(
     """
     <div style="font-size:0.95rem; color:#555; line-height:1.6;">
@@ -60,7 +59,7 @@ st.markdown(
 
 st.divider()
 
-# ---- CUMULATIVE PERFORMANCE ----
+# Cumulative Perfomance
 st.markdown("<h2>Cumulative Sector Performance</h2>", unsafe_allow_html=True)
 st.markdown(
     """
@@ -79,7 +78,7 @@ st.pyplot(fig1)
 
 st.divider()
 
-# ---- VOLATILITY ----
+# Volatility
 st.markdown("<h2>Sector Volatility (Annualized)</h2>", unsafe_allow_html=True)
 st.markdown(
     """
@@ -98,7 +97,7 @@ st.pyplot(fig2)
 
 st.divider()
 
-# ---- TREND ANALYSIS ----
+# Trend Analysis
 st.markdown("<h2>Sector Trend Analysis</h2>", unsafe_allow_html=True)
 st.markdown(
     """
@@ -123,7 +122,7 @@ st.pyplot(fig3)
 
 st.divider()
 
-# ---- KEY TAKEAWAYS ----
+# Key Takeaways
 st.markdown("<h2>Key Takeaways</h2>", unsafe_allow_html=True)
 st.markdown(
     """
