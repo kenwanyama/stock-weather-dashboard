@@ -23,7 +23,7 @@ commodities = {
 # Fetch commodity data from yfinance (only 2025), cached--------------------------------
 @st.cache_data(show_spinner=False)
 def get_commodities():
-    start = dt.date(2025, 1, 1)
+    start = dt.date(2025, 1, 2)
     end = dt.date(2025, 12, 31)
 
     data = {}
