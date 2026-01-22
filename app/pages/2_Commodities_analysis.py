@@ -127,6 +127,7 @@ st.markdown(
 fig = plt.figure(figsize=(12, 6))
 norm = pivoted / pivoted.iloc[0] * 100
 
+plt.gca().set_prop_cycle(None)
 for name in commodities.keys():
     plt.plot(norm.index, norm[name], label=name)
 
