@@ -27,16 +27,14 @@ from commodities import (
     commodities
 )
 
-# -----------------------------
-# Streamlit Page Configuration
-# -----------------------------
+#Streampage config
 st.set_page_config(
     page_title="Commodity Market Dashboard",
     layout="centered",
     initial_sidebar_state="expanded"
 )
 
-# ---- HEADER ----
+#Header
 st.markdown(
     """
     <div style='text-align:center; padding:1rem 0;'>
@@ -49,7 +47,7 @@ st.markdown(
 
 st.divider()
 
-# ---- INTRODUCTION ----
+# Introduction
 st.markdown(
     """
     <div style='padding:1rem; font-size:1rem; line-height:1.6;'>
@@ -65,10 +63,10 @@ This dashboard follows key commodities across energy, metals, and agriculture to
 
 st.divider()
 
-# ---- LOAD DATA ----
+#load Data
 data = get_commodities()
 
-# ---- PERFORMANCE SUMMARY ----
+#Perfomance Summary
 st.markdown("<h2>Performance Summary</h2>", unsafe_allow_html=True)
 summary = compute_summary(data)
 st.dataframe(summary, use_container_width=True)
@@ -83,7 +81,7 @@ st.markdown(
 
 st.divider()
 
-# ---- CORRELATION HEATMAP ----
+# Correlation heatmap
 st.markdown("<h2>Correlation Heatmap</h2>", unsafe_allow_html=True)
 st.markdown(
     """
@@ -114,7 +112,7 @@ st.pyplot(fig)
 
 st.divider()
 
-# ---- NORMALIZED COMMODITY COMPARISON ----
+#Normalized commodity
 st.markdown("<h2>Normalized Commodity Comparison (Indexed to 100)</h2>", unsafe_allow_html=True)
 st.markdown(
     """
@@ -152,7 +150,7 @@ st.markdown(
 
 st.divider()
 
-# ---- KEY TAKEAWAYS ----
+#Key takeaways
 st.markdown("<h2>Key Takeaways</h2>", unsafe_allow_html=True)
 st.markdown(
     """
