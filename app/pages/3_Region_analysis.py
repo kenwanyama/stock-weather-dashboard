@@ -6,15 +6,16 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from region_data import run_region_analysis
 from theme import apply_paper_theme
 
-# ---------------- THEME ----------------
+# Theme
 apply_paper_theme()
 
 st.set_page_config(
     page_title="Regional Markets | Stock Weather",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="expanded"
 )
 
-# ---------------- MASTHEAD ----------------
+# Masthead
 st.markdown(
     "<h1 style='text-align:center; font-family: Georgia, Times New Roman, serif;'>"
     "Regional Market Performance"
@@ -31,7 +32,7 @@ st.markdown(
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------- INTRO ----------------
+# Intro
 st.markdown("""
 Global equity markets are connected. Trade, capital flows, currency moves, and geopolitical decisions link regions together and can amplify shocks or accelerate recoveries.
 
@@ -40,10 +41,10 @@ Here we will look at major stock indices across the United States, Europe, the U
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------- DATA ----------------
+# Data
 figs = run_region_analysis()
 
-# ---------------- NORMALIZED PERFORMANCE ----------------
+# Normalized Perfomance
 st.markdown("## Normalized Market Performance")
 
 st.markdown("""
@@ -70,7 +71,7 @@ Dollar trends played a key role. A softer dollar boosted risk appetite beyond U.
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------- VOLATILITY ----------------
+# Volatility
 st.markdown("## Annualized Volatility by Region")
 
 st.markdown("""
@@ -88,7 +89,7 @@ These patterns show that even stable economies are not immune to sudden policy s
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------- CORRELATION ----------------
+# Correlation
 st.markdown("## Cross-Market Correlations")
 
 st.markdown("""
@@ -106,7 +107,7 @@ trade exposure, and sector composition—continue to create meaningful divergenc
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ---------------- TAKEAWAYS ----------------
+#Takeaways
 st.markdown("## Key Takeaways")
 
 st.markdown("""
