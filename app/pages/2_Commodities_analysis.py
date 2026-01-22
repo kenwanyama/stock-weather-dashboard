@@ -32,7 +32,8 @@ from commodities import (
 # -----------------------------
 st.set_page_config(
     page_title="Commodity Market Dashboard",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="expanded"
 )
 
 # ---- HEADER ----
