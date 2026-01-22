@@ -105,7 +105,7 @@ def plot_price(data):
 # Normalized price comparison-----------------------------------------------------------
 def plot_normalized(data):
     pivoted = data.reset_index().pivot(index="Date", columns="Name", values="Close")
-    norm = pivoted / pivoted.iloc[0] * 100
+    norm = (pivoted / pivoted.apply(lambda x: x.dropna().iloc[0])) * 100
 
     plt.figure(figsize=(12, 6))
     for name in commodities.keys():
