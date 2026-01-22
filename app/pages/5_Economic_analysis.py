@@ -5,6 +5,11 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from economic_conditions import run_economic_analysis, economic_indicators_raw
 from theme import apply_paper_theme
 
+st.set_page_config(
+    page_title="U.S. Economic Indicators",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 apply_paper_theme()
 
 st.title('U.S. Economic Indicators in 2025')
@@ -26,7 +31,7 @@ and some November figures cover two months. Alternative estimates were used wher
 
 st.divider()
 
-# ---- RUN ANALYSIS ----
+# Run analysis
 figs = run_economic_analysis()
 indicators = figs['columns']
 
